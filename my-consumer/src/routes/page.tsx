@@ -1,20 +1,38 @@
-import { Helmet } from '@modern-js/runtime/head';
+import React, { Suspense } from 'react';
+// import { Helmet } from '@modern-js/runtime/head';
 import './index.css';
-import Provider from 'provider';
+
+const Button = React.lazy(() => import('provider/Button'));
+
+const localStyle = `
+  .button { 
+    background: #000;
+  }
+`;
+
 
 const Index = () => (
   <div className="container-box">
-    <Helmet>
+    <style>{localStyle}</style>
+
+    {/* <Helmet>
       <link
         rel="icon"
         type="image/x-icon"
         href="https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/favicon.ico"
       />
-    </Helmet>
+    </Helmet> */}
 
-    <div className="landing-page">
-      <Provider />
+    <div>
+      <h1>Button Isolated Style</h1>
+      <div className='button-group'>
+        <button className="button">I am a button from Consumer </button>
+        <Suspense fallback={<p>Loading ...</p>}>
+          <Button label="I am a button from Provider" />
+        </Suspense>
+      </div>
     </div>
+
   </div>
 );
 

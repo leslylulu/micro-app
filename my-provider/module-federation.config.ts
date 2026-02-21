@@ -4,6 +4,7 @@ export default createModuleFederationConfig({
   name: 'provider',
   exposes: {
     '.': './src/components/ProviderComponent.tsx',
+    './Button': './src/components/IsolatedButton/Button.tsx',
   },
   shared: {
     react: { singleton: true },

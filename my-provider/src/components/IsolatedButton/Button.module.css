@@ -1,0 +1,20 @@
+.button {
+	background-color: #6200ee;
+	color: white;
+	border: none;
+	border-radius: 8px;
+	padding: 12px 24px;
+	font-size: 16px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.button:hover {
+	background-color: #3700b3;
+}
+
+.title {
+	color: hotpink;
+	font-size: 12px;
+	margin-top: 8px;
+}
